@@ -35,14 +35,7 @@ namespace Snake
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey(true);
-                    if (key.Key == ConsoleKey.LeftArrow)
-                        snake.dir = Direction.LEFT;
-                    else if (key.Key == ConsoleKey.RightArrow)
-                        snake.dir = Direction.RIGHT; 
-                    else if (key.Key == ConsoleKey.UpArrow)
-                        snake.dir = Direction.UP;
-                    else if (key.Key == ConsoleKey.DownArrow)
-                        snake.dir = Direction.DOWN;
+                    snake.Handle(key.Key);
                 }
                 Thread.Sleep(100);
                 snake.Move();

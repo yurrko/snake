@@ -8,7 +8,7 @@ namespace Snake
 {
     class Snake : Figure
     {
-        public Direction dir;
+        Direction dir;
 
         public Snake(Point tail, int length, Direction _dir)
         {
@@ -39,6 +39,18 @@ namespace Snake
             Point nextPoint = new Point(head);
             nextPoint.Move(1, dir);
             return nextPoint;
+        }
+
+        public void Handle(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)
+                dir = Direction.LEFT;
+            else if (key == ConsoleKey.RightArrow)
+                dir = Direction.RIGHT;
+            else if (key == ConsoleKey.UpArrow)
+                dir = Direction.UP;
+            else if (key == ConsoleKey.DownArrow)
+                dir = Direction.DOWN;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Snake
 {
     class Snake : Figure
     {
-        Direction dir;
+        public Direction dir;
 
         public Snake(Point tail, int length, Direction _dir)
         {
